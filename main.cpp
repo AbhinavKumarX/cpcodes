@@ -3,21 +3,29 @@
 
 using namespace std;
 
-int main()
+void nForest(int n)
 {
-    int arr[5];
-
-    // reading the input
-    for (int i = 0; i < 5; i++)
-    {
-        cin >> arr[i];
-    }
-    // outputing
-    for (int i = 0; i < 5; i++)
+    // Write your code here.
+    for (int i = 1; i <= n; i++)
     {
         /* code */
-        cout << arr[i] << " ";
+        for (int j = 1; j < i; j++)
+        {
+            /* code */
+            cout << " ";
+        }
+        for (int k = (2 * n - 1); k >= (2 * i - 1); k--)
+        {
+            /* code */
+            cout << "*";
+        }
+        cout << "\n";
     }
-    cout << "\n";
+}
+
+int main()
+{
+
+    nForest(4);
     return 0; // Indicate that the program ended successfully
 }
