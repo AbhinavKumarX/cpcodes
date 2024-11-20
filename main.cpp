@@ -9,6 +9,21 @@ void nForest(int n)
     for (int i = 1; i <= n; i++)
     {
         /* code */
+        for (int k = n; k > i; k--)
+        {
+            /* code */
+            cout << " ";
+        }
+        for (int j = 1; j <= (2 * i - 1); j++)
+        {
+            /* code */
+            cout << "*";
+        }
+        cout << "\n";
+    }
+    for (int i = 1; i <= n; i++)
+    {
+        /* code */
         for (int j = 1; j < i; j++)
         {
             /* code */
@@ -26,6 +41,6 @@ void nForest(int n)
 int main()
 {
 
-    nForest(4);
+    nForest(3);
     return 0; // Indicate that the program ended successfully
 }
