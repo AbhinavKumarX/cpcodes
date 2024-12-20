@@ -4,43 +4,136 @@
 using namespace std;
 
 void nForest(int n)
+
 {
     // Write your code here.
-    for (int i = 1; i <= n; i++)
+    for (int i = 0; i < n; i++)
     {
         /* code */
-        for (int k = n; k > i; k--)
+        int start = 1;
+        if (i % 2 == 0)
         {
             /* code */
-            cout << " ";
+            start = 1;
         }
-        for (int j = 1; j <= (2 * i - 1); j++)
+        else
+        {
+            start = 0;
+        }
+
+        for (int j = 0; j <= i; j++)
         {
             /* code */
-            cout << "*";
+            cout << start << " ";
+            start = 1 - start;
         }
-        cout << "\n";
+        cout << endl;
     }
-    for (int i = 1; i <= n; i++)
+}
+void nForest2(int n)
+{
+    for (int i = 0; i < n; i++)
     {
         /* code */
-        for (int j = 1; j < i; j++)
+        for (int j = 0; j <= i; j++)
         {
             /* code */
-            cout << " ";
+            cout << j + 1 << " ";
         }
-        for (int k = (2 * n - 1); k >= (2 * i - 1); k--)
+        for (int j = 0; j < n - i - 1; j++)
         {
             /* code */
-            cout << "*";
+            cout << "  " << "  ";
         }
-        cout << "\n";
+        for (int j = 0; j <= i; j++)
+        {
+            /* code */
+            cout << i - j + 1 << " ";
+        }
+        cout << endl;
     }
+}
+void nForest3(int n)
+
+{
+    int start = 1;
+    for (int i = 0; i < n; i++)
+    {
+        /* code */
+        for (int j = 0; j < i; j++)
+        {
+            /* code */
+            cout << start << " ";
+            start++;
+        }
+        cout << endl;
+    }
+}
+void nForest4(int n)
+{
+    int start = 65;
+    for (int i = 0; i < n; i++)
+    {
+        /* code */
+
+        for (int j = 0; j <= i; j++)
+        {
+            /* code */
+            cout << (char)start << " ";
+        }
+        cout << endl;
+        start++;
+    }
+}
+void nForest5(int n) // this code can be more optimised by eliminating variable start altogether and using i and j instead of ++ for enumeration.
+{
+    for (int i = 0; i < n; i++)
+    {
+        int star1 = 65;
+        int star2 = 65;
+        /* code */
+        for (int j = 0; j < n - i - 1; j++)
+        {
+            /* code */
+            cout << "_";
+        }
+        for (int j = 0; j <= i; j++)
+        {
+            /* code */
+            cout << (char)star1;
+            star1++;
+        }
+        for (int j = 0; j < i; j++)
+        {
+            /* code */
+            cout << (char)(star2 + i - j - 1);
+        }
+
+        cout << endl;
+    }
+}
+void nForest6(int n)
+{
+    int start = 65;
+    for (int i = 0; i < n; i++)
+    {
+        /* code */
+        for (int j = 0; j <= i; j++)
+        {
+            /* code */
+            cout << (char)(start + n - i + j - 1);
+        }
+        cout << endl;
+    }
+}
+void nForest7(int n )
+{
+    
 }
 
 int main()
 {
 
-    nForest(3);
+    nForest6(6);
     return 0; // Indicate that the program ended successfully
 }
